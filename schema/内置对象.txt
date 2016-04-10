@@ -1,0 +1,126 @@
+Require (packageName)
+Include (url)
+
+True 
+	MemoryAddress
+	Meta
+	Is (type)
+	RelationOf (obj)
+	HasProperty (obj)
+	ToString (format)
+	ToNumber (digit)
+
+	New ()
+	Extend (tab)
+	Pair (key, value)
+	Concat (array, ...)
+	Push (element, ...)
+	Pop ()
+	Unshift (element, ...)
+	Shift ()
+	Reverse ()
+	Slice (start, end)
+	Join (separator)
+	Sort (sortBy)
+
+Number
+	Abs
+	Sign
+	Ceil
+	Floor
+	Round
+	Sqrt
+	Sqr
+	Module (x)
+	ToFixed (num)
+	ToExponential (num)
+	ToPrecison (num)
+	Times (func)
+	LimitTo (to, func), (to, by, func)
+
+String
+	Length
+	UpperCase
+	LowerCase
+	Format (var, ...)
+	CharAt (index)
+	IndexOf (searchValue, fromIndex)
+	LastIndexOf (searchValue, fromIndex)
+	Match (regExp)
+	Replace (regExp, replacement)
+	Slice (star, end)
+	Split (separator, howmany)
+	SubString (start, length)
+
+Function
+	Call (at, para, ...)
+
+Math
+	Pi
+	E
+	Log2E
+	Log10E
+	Ln2
+	Ln10
+	Sin(x)
+	Cos (x)
+	Tan (x)
+	Asin (x)
+	Acos (x)
+	Atan (x)
+	Atan2 (y, x)
+	Sinh (x)
+	Cosh (x)
+	Tanh (x)
+	Log (x)
+	Log10 (x)
+	Ln (x)
+	Abs (x)
+	Sign (x)
+	Ceil (x)
+	Floor (x)
+	Round (x)
+	Sqrt (x)
+	Sqr (x)
+	Exp (x)
+	Pow (x, y)
+	Hypot (x, y)
+	Max (x, y, ...)
+	Min (x, y, ...)
+	Random (), (from, to)
+
+Date
+	UTC
+	year
+	hour
+	minute
+	second
+	milisecond
+	time
+	ToString (format)
+
+IO
+	position
+	Flush ()
+	Read ()
+	ReadLine ()
+	Write (value)
+	WriteLine (value)
+	
+IO (filePath)
+	Path
+	Dir
+	Name
+	Open ()
+	Close ()
+
+Console (command)
+	Debug (message)
+	Warnning (message)
+	Error (message)
+	Assert (condition, message)
+	StartTimer (timerName)
+	EndTimer (timerName)
+
+Exception
+

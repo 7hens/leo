@@ -1,0 +1,44 @@
+语法规则:
+	Keywords:
+		IF		?
+		UNLESS	?:
+		CASE	?>
+		WHEN	:>
+		ELSE	::
+
+		WHILE	%
+		UNTIL	%:
+		FOR		%>
+		IN		=>
+		BREAK	--
+		CONT	++
+
+		FUNC	$$
+		RET		//
+
+		NOT		!
+		MINUS	-
+		ABS		+
+		MUL		*
+		DIV		/
+		MOD		\
+		ADD		+
+		SUB		-
+		CAT 	~
+		EQ		==
+		NE		!=
+		GT		>>
+		GE		>=
+		LT		<<
+		LT		<=
+		AND		&
+		OR		|
+		XOR		^
+
+		AT		@
+		THIS	$
+		TO		..
+		LESS_TO	...
+		BY		**
+	运算符重载:
+		(>>), (>=), (<<), (<=), (~), (+), (-), (*), (/), (\)

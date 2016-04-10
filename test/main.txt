@@ -1,0 +1,17 @@
+	
+	Console = "Console"@
+	vector = "vector.txt"@
+	obj = vector(3, 4)
+	obj.length = 50
+	Console.log(obj.x, obj.y)
+	array = 1+>3
+	Console.log(array.maxIndex, array.minIndex, array.startIndex, array.endIndex)
+	Console("pause")
+
+
+
+	
+
+
+
+

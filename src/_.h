@@ -9,40 +9,114 @@
 #include <math.h>
 #include <limits.h>
 #include <direct.h>
-#include <sys/time.h>
 
-#define DEBUG
+#define LEO_DEBUG
 #define USE_WINDOWS
 
+#define LEO_VERSION_MAJOR 	"0"
+#define LEO_VERSION_MINOR 	"1"
+#define LEO_VERSION_RELEASE "0"
+#define LEO_VERSION_NUM 	3
+#define LEO_VERSION 	"Leo " LEO_VERSION_MAJOR "." LEO_VERSION_MINOR
+#define LEO_RELEASE 	LEO_VERSION "." LEO_VERSION_RELEASE
+#define LEO_COPYRIGHT	LEO_RELEASE "	Copyright (C) "
+#define LEO_AUTHORS		"7hens"
+
+/*********************************************/
 #if defined(USE_WINDOWS)
 #define DIR_SEPERATOR '\\'
 #else
 #define DIR_SEPERATOR '/'
 #endif
+/*********************************************/
 
+/*********************************************/
 #if LONG_MAX >> 31 > 0
-#define WORD_BYTES 8 /* 64-bit */
+#define WORD_BYTES 8     /* 64-bit */
 #elif INT_MAX >> 15 > 0
-#define WORD_BYTES 4 /* 32-bit */
+#define WORD_BYTES 4     /* 32-bit */
 #else
-#define WORD_BYTES 2 /* 16-bit */
+#define WORD_BYTES 2     /* 16-bit */
 #endif
+/*********************************************/
 
+/*********************************************/
 #if WORD_BYTES == 8
+
+typedef signed long intx;
+typedef unsigned long uintx;
 typedef signed int int32;
 typedef unsigned int uint32;
-#define REAL_BYTES 8
+
 #elif WORD_BYTES == 4
+
+typedef signed int intx;
+typedef unsigned int uintx;
 typedef signed int int32;
 typedef unsigned int uint32;
-#define REAL_BYTES 8
+
 #else
+
+typedef signed int intx;
+typedef unsigned int uintx;
 typedef signed long int32;
 typedef unsigned long uint32;
-#define REAL_BYTES 4
+
+#endif /* WORD_BYTES */
+/*********************************************/
+
+/*********************************************/
+#define REAL_TYPE_FLOAT         1
+#define REAL_TYPE_DOUBLE        2
+#define REAL_TYPE_LONGDOUBLE    3
+/*********************************************/
+
+/*********************************************/
+#ifndef REAL_TYPE
+
+#if WORD_BYTES == 8
+#define REAL_BYTES  	8
+#define REAL_TYPE 		REAL_TYPE_DOUBLE
+#else
+#define REAL_BYTES      4
+#define REAL_TYPE     	REAL_TYPE_FLOAT
 #endif /* WORD_BYTES */
 
-typedef size_t word;
+#endif /* REAL_TYPE */
+/*********************************************/
+
+/*********************************************/
+#if REAL_TYPE == REAL_TYPE_FLOAT
+
+typedef float real;
+#define REAL_FORMAT     "%.7g"
+#define real_limit(n)	FLT_##n
+#define math_op(op)		op##f
+#define math_s2r(s,p)	(strtof((s),(p)))
+
+#elif REAL_TYPE == REAL_TYPE_DOUBLE
+
+typedef double real;
+#define REAL_FORMAT		"%.14g"
+#define real_limit(n)   DBL_##n
+#define math_op(op)     op##d
+#define math_s2r(s,p)   (strtod((s),(p)))
+
+#elif REAL_TYPE == REAL_TYPE_LONGDOUBLE
+
+#define REAL_FORMAT     "%.19g"
+#define real_limit(n)   LDBL_##n
+#define math_op(op)     op##l
+#define math_s2r(s,p)   (strtold((s),(p)))
+
+#else
+
+#error "numeric float type not defined"
+
+#endif
+/*********************************************/
+
+/*********************************************/
 typedef signed short int16;
 typedef unsigned short uint16;
 typedef signed char int8;
@@ -52,18 +126,13 @@ typedef unsigned char boolean;
 typedef void *Pointer;
 typedef char *Chars;
 typedef FILE *File;
+/*********************************************/
 
-#if REAL_BYTES == 8
-typedef double real;
-#else
-typedef float real;
-#endif /* REAL_BYTES */
-
+/*********************************************/
 #define bitsof(t) (sizeof(t)<<3)
-#define sizeof_type(t) (sizeof(struct t))
-#define sizeof_word (sizeof(word))
 #define cast_type(t, x) ((t)(x))
-#define cast_word(x) ((word)(x))
+#define cast_intx(x) ((intx)(x))
+#define cast_uintx(x) ((uintx)(x))
 #define cast_int32(x) ((int32)(x))
 #define cast_uint32(x) ((uint32)(x))
 #define cast_int16(x) ((int16)(x))
@@ -81,13 +150,23 @@ typedef float real;
 #define math_max(x, y) ((x) > (y) ? (x) : (y))
 #define math_min(x, y) ((x) < (y) ? (x) : (y))
 #define math_swap(x, y) ((x) ^= (y) ^= (x) ^= (y))
-#define math_abs(x) ((x) > 0 ? (x) : -(x))
-#define math_sign(x) ((x) > 0 ? 1 : ((x) ? -1 : 0))
+#define math_abs(x) ((x) < 0 ? -(x) : (x))
+#define math_sign(x) ((x) < 0 ? -1 : ((x) ? 1 : 0))
 #define math_r2i(r, i) ((i = (r)) == (r))
 #define math_pow2(n) (1 << (n))
+/*********************************************/
 
+/*********************************************/
+#ifdef LEO_DEBUG
+#define debug_assert(c) ((c)||printf("debug>> assertion failed: %s, #%d, "#c"\n",__FILE__,__LINE__))
+#define debug_log(format, arg...)	(printf(format, arg))
+#else
+#define debug_assert(c) 			((void)0)
+#define debug_log(format, arg...) 	((void)0)
+#endif
+/*********************************************/
 
-
+/*********************************************/
 typedef enum ExpType ExpType;
 typedef struct Exp *Exp;
 typedef struct BinaryExp *BinaryExp;
@@ -104,12 +183,15 @@ typedef struct Procedure *Procedure;
 typedef struct Interpreter *Interpreter;
 typedef Value (*Func) (Procedure proc, Value at, Exp arg);
 typedef Value (*InitFunc) ();
+/*********************************************/
 
+/*********************************************/
 #include "exp.h"
 #include "value.h"
 #include "global.h"
 #include "eval.h"
 #include "lib.h"
 #include "debug.h"
+/*********************************************/
 
 #endif

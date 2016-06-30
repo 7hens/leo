@@ -1,6 +1,6 @@
-#line 2 "src\\lex.c"
+#line 2 "..\\..\\src\\lex.c"
 
-#line 4 "src\\lex.c"
+#line 4 "..\\..\\src\\lex.c"
 
 #define  YY_INT_ALIGNED short int
 
@@ -619,8 +619,8 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "_.l"
-#line 4 "_.l"
+#line 1 "..\\..\\src\\_.l"
+#line 4 "..\\..\\src\\_.l"
 #include "_.h"
 #include "yacc.h"
 
@@ -630,7 +630,7 @@ static int preCTab = 0;
 static int preNTab = -1;
 static int nocomma = 1;
 
-#line 634 "src\\lex.c"
+#line 634 "..\\..\\src\\lex.c"
 
 #define INITIAL 0
 #define COMMENT 1
@@ -819,9 +819,9 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
     
-#line 16 "_.l"
+#line 16 "..\\..\\src\\_.l"
 
-#line 825 "src\\lex.c"
+#line 825 "..\\..\\src\\lex.c"
 
 	if ( !(yy_init) )
 		{
@@ -917,23 +917,23 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 /* rule 1 can match eol */
 YY_RULE_SETUP
-#line 17 "_.l"
+#line 17 "..\\..\\src\\_.l"
 { preCTab = curTab; curTab = 0; BEGIN COMMENT; }
 	YY_BREAK
 case 2:
 /* rule 2 can match eol */
 YY_RULE_SETUP
-#line 18 "_.l"
+#line 18 "..\\..\\src\\_.l"
 { }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 19 "_.l"
+#line 19 "..\\..\\src\\_.l"
 { curTab = yyleng; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 20 "_.l"
+#line 20 "..\\..\\src\\_.l"
 {
 	yyless(0);
 	//printf("lex> %d, INITIAL: (preNTab, curTab) = (%d, %d)\n", yylineno, preNTab, curTab);
@@ -961,7 +961,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 44 "_.l"
+#line 44 "..\\..\\src\\_.l"
 {
 	if (yyleng <= preCTab) {
 		yyless(0);
@@ -972,18 +972,18 @@ YY_RULE_SETUP
 case 6:
 /* rule 6 can match eol */
 YY_RULE_SETUP
-#line 50 "_.l"
+#line 50 "..\\..\\src\\_.l"
 { }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 51 "_.l"
+#line 51 "..\\..\\src\\_.l"
 {}
 	YY_BREAK
 case 8:
 /* rule 8 can match eol */
 YY_RULE_SETUP
-#line 52 "_.l"
+#line 52 "..\\..\\src\\_.l"
 {
 	yyless(1);
 	++nocomma;
@@ -993,242 +993,242 @@ YY_RULE_SETUP
 case 9:
 /* rule 9 can match eol */
 YY_RULE_SETUP
-#line 57 "_.l"
+#line 57 "..\\..\\src\\_.l"
 { curTab = 0; BEGIN INITIAL; }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 58 "_.l"
+#line 58 "..\\..\\src\\_.l"
 { return LA; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 59 "_.l"
+#line 59 "..\\..\\src\\_.l"
 { return RA; }
 	YY_BREAK
 case 12:
 /* rule 12 can match eol */
 YY_RULE_SETUP
-#line 60 "_.l"
+#line 60 "..\\..\\src\\_.l"
 { return LP; }
 	YY_BREAK
 case 13:
 /* rule 13 can match eol */
 YY_RULE_SETUP
-#line 61 "_.l"
+#line 61 "..\\..\\src\\_.l"
 { return LB; }
 	YY_BREAK
 case 14:
 /* rule 14 can match eol */
 YY_RULE_SETUP
-#line 62 "_.l"
+#line 62 "..\\..\\src\\_.l"
 { return LC; }
 	YY_BREAK
 case 15:
 /* rule 15 can match eol */
 YY_RULE_SETUP
-#line 63 "_.l"
+#line 63 "..\\..\\src\\_.l"
 { return RP; }
 	YY_BREAK
 case 16:
 /* rule 16 can match eol */
 YY_RULE_SETUP
-#line 64 "_.l"
+#line 64 "..\\..\\src\\_.l"
 { return RB; }
 	YY_BREAK
 case 17:
 /* rule 17 can match eol */
 YY_RULE_SETUP
-#line 65 "_.l"
+#line 65 "..\\..\\src\\_.l"
 { return RC; }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 66 "_.l"
+#line 66 "..\\..\\src\\_.l"
 { return NOT; }
 	YY_BREAK
 case 19:
 /* rule 19 can match eol */
 YY_RULE_SETUP
-#line 67 "_.l"
+#line 67 "..\\..\\src\\_.l"
 { return OR; }
 	YY_BREAK
 case 20:
 /* rule 20 can match eol */
 YY_RULE_SETUP
-#line 68 "_.l"
+#line 68 "..\\..\\src\\_.l"
 { return AND; }
 	YY_BREAK
 case 21:
 /* rule 21 can match eol */
 YY_RULE_SETUP
-#line 69 "_.l"
+#line 69 "..\\..\\src\\_.l"
 { return ADD; }
 	YY_BREAK
 case 22:
 /* rule 22 can match eol */
 YY_RULE_SETUP
-#line 70 "_.l"
+#line 70 "..\\..\\src\\_.l"
 { return SUB; }
 	YY_BREAK
 case 23:
 /* rule 23 can match eol */
 YY_RULE_SETUP
-#line 71 "_.l"
+#line 71 "..\\..\\src\\_.l"
 { return MUL; }
 	YY_BREAK
 case 24:
 /* rule 24 can match eol */
 YY_RULE_SETUP
-#line 72 "_.l"
+#line 72 "..\\..\\src\\_.l"
 { return DIV; }
 	YY_BREAK
 case 25:
 /* rule 25 can match eol */
 YY_RULE_SETUP
-#line 73 "_.l"
+#line 73 "..\\..\\src\\_.l"
 { return CAT; }
 	YY_BREAK
 case 26:
 /* rule 26 can match eol */
 YY_RULE_SETUP
-#line 74 "_.l"
+#line 74 "..\\..\\src\\_.l"
 { return LT; }
 	YY_BREAK
 case 27:
 /* rule 27 can match eol */
 YY_RULE_SETUP
-#line 75 "_.l"
+#line 75 "..\\..\\src\\_.l"
 { return LE; }
 	YY_BREAK
 case 28:
 /* rule 28 can match eol */
 YY_RULE_SETUP
-#line 76 "_.l"
+#line 76 "..\\..\\src\\_.l"
 { return EQ; }
 	YY_BREAK
 case 29:
 /* rule 29 can match eol */
 YY_RULE_SETUP
-#line 77 "_.l"
+#line 77 "..\\..\\src\\_.l"
 { return GE; }
 	YY_BREAK
 case 30:
 /* rule 30 can match eol */
 YY_RULE_SETUP
-#line 78 "_.l"
+#line 78 "..\\..\\src\\_.l"
 { return GT; }
 	YY_BREAK
 case 31:
 /* rule 31 can match eol */
 YY_RULE_SETUP
-#line 79 "_.l"
+#line 79 "..\\..\\src\\_.l"
 { return NE; }
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 80 "_.l"
+#line 80 "..\\..\\src\\_.l"
 { return ASSIGN; }
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 81 "_.l"
+#line 81 "..\\..\\src\\_.l"
 { return OR_ASSIGN; }
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 82 "_.l"
+#line 82 "..\\..\\src\\_.l"
 { return AND_ASSIGN; }
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 83 "_.l"
+#line 83 "..\\..\\src\\_.l"
 { return ADD_ASSIGN; }
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 84 "_.l"
+#line 84 "..\\..\\src\\_.l"
 { return SUB_ASSIGN; }
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 85 "_.l"
+#line 85 "..\\..\\src\\_.l"
 { return MUL_ASSIGN; }
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 86 "_.l"
+#line 86 "..\\..\\src\\_.l"
 { return DIV_ASSIGN; }
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 87 "_.l"
+#line 87 "..\\..\\src\\_.l"
 { return CAT_ASSIGN; }
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 88 "_.l"
+#line 88 "..\\..\\src\\_.l"
 { return LT_ASSIGN; }
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 89 "_.l"
+#line 89 "..\\..\\src\\_.l"
 { return LE_ASSIGN; }
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 90 "_.l"
+#line 90 "..\\..\\src\\_.l"
 { return EQ_ASSIGN; }
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 91 "_.l"
+#line 91 "..\\..\\src\\_.l"
 { return GE_ASSIGN; }
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 92 "_.l"
+#line 92 "..\\..\\src\\_.l"
 { return GT_ASSIGN; }
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 93 "_.l"
+#line 93 "..\\..\\src\\_.l"
 { return NE_ASSIGN; }
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
-#line 94 "_.l"
+#line 94 "..\\..\\src\\_.l"
 { return ACCESSOR; }
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
-#line 95 "_.l"
+#line 95 "..\\..\\src\\_.l"
 { return TO; }
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
-#line 96 "_.l"
+#line 96 "..\\..\\src\\_.l"
 { return LESS_TO; }
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
-#line 97 "_.l"
+#line 97 "..\\..\\src\\_.l"
 { return BY; }
 	YY_BREAK
 case 50:
 /* rule 50 can match eol */
 YY_RULE_SETUP
-#line 98 "_.l"
+#line 98 "..\\..\\src\\_.l"
 { BEGIN INT_MEMBER; return DOT; }
 	YY_BREAK
 case 51:
 YY_RULE_SETUP
-#line 99 "_.l"
+#line 99 "..\\..\\src\\_.l"
 { BEGIN INT_MEMBER; return AT; }
 	YY_BREAK
 case 52:
 YY_RULE_SETUP
-#line 100 "_.l"
+#line 100 "..\\..\\src\\_.l"
 {
 	real number = 0;
 	sscanf(yytext, "%f", &number);
@@ -1239,134 +1239,134 @@ YY_RULE_SETUP
 case 53:
 /* rule 53 can match eol */
 YY_RULE_SETUP
-#line 106 "_.l"
+#line 106 "..\\..\\src\\_.l"
 { yyless(0); BEGIN NORMAL; }
 	YY_BREAK
 case 54:
 YY_RULE_SETUP
-#line 107 "_.l"
+#line 107 "..\\..\\src\\_.l"
 { return COLON; }
 	YY_BREAK
 case 55:
 /* rule 55 can match eol */
 YY_RULE_SETUP
-#line 108 "_.l"
+#line 108 "..\\..\\src\\_.l"
 { return SEMICOLON; }
 	YY_BREAK
 case 56:
 /* rule 56 can match eol */
 YY_RULE_SETUP
-#line 109 "_.l"
+#line 109 "..\\..\\src\\_.l"
 { return COMMA; }
 	YY_BREAK
 case 57:
 YY_RULE_SETUP
-#line 110 "_.l"
+#line 110 "..\\..\\src\\_.l"
 { return ME; }
 	YY_BREAK
 case 58:
 YY_RULE_SETUP
-#line 111 "_.l"
+#line 111 "..\\..\\src\\_.l"
 { return FUNCTION; }
 	YY_BREAK
 case 59:
 YY_RULE_SETUP
-#line 112 "_.l"
+#line 112 "..\\..\\src\\_.l"
 { return RETURN; }
 	YY_BREAK
 case 60:
 YY_RULE_SETUP
-#line 113 "_.l"
+#line 113 "..\\..\\src\\_.l"
 { return RETURN_IF; }
 	YY_BREAK
 case 61:
 YY_RULE_SETUP
-#line 114 "_.l"
+#line 114 "..\\..\\src\\_.l"
 { return RETURN_UNLESS; }
 	YY_BREAK
 case 62:
 YY_RULE_SETUP
-#line 115 "_.l"
+#line 115 "..\\..\\src\\_.l"
 { return IF; }
 	YY_BREAK
 case 63:
 YY_RULE_SETUP
-#line 116 "_.l"
+#line 116 "..\\..\\src\\_.l"
 { return UNLESS; }
 	YY_BREAK
 case 64:
 YY_RULE_SETUP
-#line 117 "_.l"
+#line 117 "..\\..\\src\\_.l"
 { return ELSE; }
 	YY_BREAK
 case 65:
 YY_RULE_SETUP
-#line 118 "_.l"
+#line 118 "..\\..\\src\\_.l"
 { return SWITCH; }
 	YY_BREAK
 case 66:
 YY_RULE_SETUP
-#line 119 "_.l"
+#line 119 "..\\..\\src\\_.l"
 { return CASE; }
 	YY_BREAK
 case 67:
 YY_RULE_SETUP
-#line 120 "_.l"
+#line 120 "..\\..\\src\\_.l"
 { return WHILE; }
 	YY_BREAK
 case 68:
 YY_RULE_SETUP
-#line 121 "_.l"
+#line 121 "..\\..\\src\\_.l"
 { return UNTIL; }
 	YY_BREAK
 case 69:
 YY_RULE_SETUP
-#line 122 "_.l"
+#line 122 "..\\..\\src\\_.l"
 { return FOREACH; }
 	YY_BREAK
 case 70:
 YY_RULE_SETUP
-#line 123 "_.l"
+#line 123 "..\\..\\src\\_.l"
 { return IN_OWN; }
 	YY_BREAK
 case 71:
 YY_RULE_SETUP
-#line 124 "_.l"
+#line 124 "..\\..\\src\\_.l"
 { return IN; }
 	YY_BREAK
 case 72:
 YY_RULE_SETUP
-#line 125 "_.l"
+#line 125 "..\\..\\src\\_.l"
 { return BREAK; }
 	YY_BREAK
 case 73:
 YY_RULE_SETUP
-#line 126 "_.l"
+#line 126 "..\\..\\src\\_.l"
 { return BREAK_IF; }
 	YY_BREAK
 case 74:
 YY_RULE_SETUP
-#line 127 "_.l"
+#line 127 "..\\..\\src\\_.l"
 { return BREAK_UNLESS; }
 	YY_BREAK
 case 75:
 YY_RULE_SETUP
-#line 128 "_.l"
+#line 128 "..\\..\\src\\_.l"
 { return CONTINUE; }
 	YY_BREAK
 case 76:
 YY_RULE_SETUP
-#line 129 "_.l"
+#line 129 "..\\..\\src\\_.l"
 { return CONTINUE_IF; }
 	YY_BREAK
 case 77:
 YY_RULE_SETUP
-#line 130 "_.l"
+#line 130 "..\\..\\src\\_.l"
 { return CONTINUE_UNLESS; }
 	YY_BREAK
 case 78:
 YY_RULE_SETUP
-#line 131 "_.l"
+#line 131 "..\\..\\src\\_.l"
 {
 	real number = 0;
 	sscanf(yytext, "%f", &number);
@@ -1376,7 +1376,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 79:
 YY_RULE_SETUP
-#line 137 "_.l"
+#line 137 "..\\..\\src\\_.l"
 {
 	yylval.exp = Exp_identifier(yytext);
 	//printf("lex> %d, NORMAL: %s\n", yylineno, yytext);
@@ -1386,37 +1386,37 @@ YY_RULE_SETUP
 case 80:
 /* rule 80 can match eol */
 YY_RULE_SETUP
-#line 142 "_.l"
+#line 142 "..\\..\\src\\_.l"
 { BEGIN INITIAL; }
 	YY_BREAK
 case 81:
 /* rule 81 can match eol */
 YY_RULE_SETUP
-#line 143 "_.l"
+#line 143 "..\\..\\src\\_.l"
 { BEGIN STRING; return ECAT; }
 	YY_BREAK
 case 82:
 YY_RULE_SETUP
-#line 144 "_.l"
+#line 144 "..\\..\\src\\_.l"
 { BEGIN STRING; }
 	YY_BREAK
 case 83:
 YY_RULE_SETUP
-#line 145 "_.l"
+#line 145 "..\\..\\src\\_.l"
 { BEGIN STRING_2; }
 	YY_BREAK
 case 84:
 YY_RULE_SETUP
-#line 146 "_.l"
+#line 146 "..\\..\\src\\_.l"
 { BEGIN REGEX; }
 	YY_BREAK
 case 85:
-#line 148 "_.l"
+#line 148 "..\\..\\src\\_.l"
 case 86:
-#line 149 "_.l"
+#line 149 "..\\..\\src\\_.l"
 case 87:
 YY_RULE_SETUP
-#line 149 "_.l"
+#line 149 "..\\..\\src\\_.l"
 {
 	yylval.exp = Exp_value(StringBuffer_close());
 	BEGIN NORMAL;
@@ -1426,49 +1426,49 @@ YY_RULE_SETUP
 	YY_BREAK
 case 88:
 YY_RULE_SETUP
-#line 155 "_.l"
+#line 155 "..\\..\\src\\_.l"
 { StringBuffer_add('"'); }
 	YY_BREAK
 case 89:
 YY_RULE_SETUP
-#line 156 "_.l"
+#line 156 "..\\..\\src\\_.l"
 { StringBuffer_add('\''); }
 	YY_BREAK
 case 90:
 YY_RULE_SETUP
-#line 157 "_.l"
+#line 157 "..\\..\\src\\_.l"
 { StringBuffer_add('/'); }
 	YY_BREAK
 case 91:
 YY_RULE_SETUP
-#line 158 "_.l"
+#line 158 "..\\..\\src\\_.l"
 { StringBuffer_add('\t'); }
 	YY_BREAK
 case 92:
 YY_RULE_SETUP
-#line 159 "_.l"
+#line 159 "..\\..\\src\\_.l"
 { StringBuffer_add('\n'); }
 	YY_BREAK
 case 93:
 YY_RULE_SETUP
-#line 160 "_.l"
+#line 160 "..\\..\\src\\_.l"
 { StringBuffer_add('\\'); }
 	YY_BREAK
 case 94:
 YY_RULE_SETUP
-#line 161 "_.l"
+#line 161 "..\\..\\src\\_.l"
 { StringBuffer_add('#'); }
 	YY_BREAK
 case 95:
 /* rule 95 can match eol */
 YY_RULE_SETUP
-#line 162 "_.l"
+#line 162 "..\\..\\src\\_.l"
 {}
 	YY_BREAK
 case 96:
 /* rule 96 can match eol */
 YY_RULE_SETUP
-#line 163 "_.l"
+#line 163 "..\\..\\src\\_.l"
 {
 	yylval.exp = Exp_value(StringBuffer_close());
 	BEGIN NORMAL;
@@ -1478,18 +1478,18 @@ YY_RULE_SETUP
 case 97:
 /* rule 97 can match eol */
 YY_RULE_SETUP
-#line 168 "_.l"
+#line 168 "..\\..\\src\\_.l"
 { StringBuffer_add('\n'); }
 	YY_BREAK
 case 98:
 YY_RULE_SETUP
-#line 169 "_.l"
+#line 169 "..\\..\\src\\_.l"
 { StringBuffer_add(yytext[0]); }
 	YY_BREAK
 case YY_STATE_EOF(INITIAL):
 case YY_STATE_EOF(COMMENT):
 case YY_STATE_EOF(NORMAL):
-#line 170 "_.l"
+#line 170 "..\\..\\src\\_.l"
 {
 	//printf("lex> %d, EOF: (defaultTab, curTab) = (%d, %d)\n", yylineno, defaultTab, curTab);
 	if (defaultTab < preNTab) {
@@ -1505,20 +1505,20 @@ case YY_STATE_EOF(NORMAL):
 case 99:
 /* rule 99 can match eol */
 YY_RULE_SETUP
-#line 181 "_.l"
+#line 181 "..\\..\\src\\_.l"
 { yyless(0); BEGIN INITIAL; }
 	YY_BREAK
 case 100:
 YY_RULE_SETUP
-#line 182 "_.l"
+#line 182 "..\\..\\src\\_.l"
 { yyerror("Mystery characher (#%d, \"%c\").\n", yylineno, *yytext); }
 	YY_BREAK
 case 101:
 YY_RULE_SETUP
-#line 184 "_.l"
+#line 184 "..\\..\\src\\_.l"
 ECHO;
 	YY_BREAK
-#line 1522 "src\\lex.c"
+#line 1522 "..\\..\\src\\lex.c"
 case YY_STATE_EOF(STRING):
 case YY_STATE_EOF(STRING_2):
 case YY_STATE_EOF(REGEX):
@@ -2528,7 +2528,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 183 "_.l"
+#line 183 "..\\..\\src\\_.l"
 
 
 

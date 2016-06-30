@@ -14,7 +14,7 @@
 		CONT	++
 
 		FUNC	$$
-		RET		//
+		RET		~~
 
 		NOT		!
 		MINUS	-

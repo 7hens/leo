@@ -1,13 +1,13 @@
 LOAD: 	RA = pool[BC]
-JUMP:	?: RA {pc += sBC}	; (GOTO: RG_Nil, sBC)
+JUMP:	?: RA {pc += sBC}	; (GOTO: RG_nil, sBC)
 MOVE:	(A:) RB = RC 		; A in {MOVE, ABS, MINUS, NOT, U(...)}
-TOP:	RA = top(B) [C]
 ADD:	RA = RB + RC
 SUB:	RA = RB - RC
 MUL:	RA = RB * RC
 DIV:	RA = RB / RC
 MOD:	RA = RB \ RC
-CAT:	RA = RB ~ RC
+POW: 	RA = RB ** RC
+IDIV: 	RA = RB // RC
 EQ:		RA = RB == RC
 NE:		RA = RB != RC
 LT:		RA = RB << RC
@@ -30,9 +30,9 @@ SET:	RA.RB = RC
 //   sBC: 18b, -131072 ~ 131071
 
 // R_(temp, func, at, me)
-// R_(Nil, True, Number, String, Function, Buildin, Accessor)
-// RN_(Zero, One, Two, Half)
-// RS_(Length, MemoryAddress, New, ...)
+// R_(nil, true, number, string, table, function, buildin, accessor)
+// RN_(zero, one, two, half)
+// RS_(length, memoryAddress, new, ...)
 
 /*******************************************************************************
  *	R_temp: push temp stack (=) pop temp stack

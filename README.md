@@ -1,2 +1,2 @@
-# leo
+# yas
 Yet another simple script
